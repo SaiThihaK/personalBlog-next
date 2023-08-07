@@ -4,7 +4,6 @@ import {AiOutlineBell} from  "react-icons/ai"
 import {AiOutlineDown} from  "react-icons/ai"
 import NavbarDropdown from "@/Components/NavbarDropdown";
 import {useState} from "react";
-import Image from 'next/image'
 
 export default function  Navbar(){
     const [showDropdown,setShowDropdown] = useState(false)
