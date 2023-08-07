@@ -2,10 +2,11 @@
 import {CiSearch} from "react-icons/ci"
 import {AiOutlineBell} from  "react-icons/ai"
 import {AiOutlineDown} from  "react-icons/ai"
-import NavbarDropdown from "@/Components/NavbarDropdown";
+import NavbarDropdown from "@/Components/Navbar/NavbarDropdown";
 import {useState} from "react";
 
-export default function  Navbar(){
+
+export default function  Index(){
     const [showDropdown,setShowDropdown] = useState(false)
     const handleDropdown =()=>{
         setShowDropdown(!showDropdown)
@@ -16,9 +17,9 @@ export default function  Navbar(){
                 <div className="flex items-center  gap-3">
                     <h1 className="cursor-pointer">Logo</h1>
                     <div className="hidden md:block">
-                        <div className="flex bg-[#f9f9f9] items-center rounded-2xl px-2 py-1  "  >
+                        <div className="flex bg-[#f9f9f9] items-center rounded-2xl gap-1 px-2 py-1  "  >
                             <CiSearch className="text-black h-6 w-6" />
-                            <input placeholder="Search Medium" className="border-0 rounded-2xl text-black focus:outline-0 focus:ring-0 " />
+                            <input placeholder="Search Medium" className="border-0 rounded-2xl   bg-[#f9f9f9] text-black focus:outline-0 focus:ring-0 " />
                         </div>
                     </div>
 
@@ -34,6 +35,8 @@ export default function  Navbar(){
             <div  className={ showDropdown? `block absolute  right-5 mt-3 ` : `hidden`}>
                 <NavbarDropdown/>
             </div>
+
+
 
         </div>
     );
