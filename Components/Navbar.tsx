@@ -4,6 +4,7 @@ import {AiOutlineBell} from  "react-icons/ai"
 import {AiOutlineDown} from  "react-icons/ai"
 import NavbarDropdown from "@/Components/NavbarDropdown";
 import {useState} from "react";
+import Image from 'next/image'
 
 export default function  Navbar(){
     const [showDropdown,setShowDropdown] = useState(false)
@@ -11,7 +12,7 @@ export default function  Navbar(){
         setShowDropdown(!showDropdown)
     }
     return (
-        <div className="px-7 py-4  relative  ">
+        <div className="container mx-auto py-4  relative  ">
             <div className="flex justify-between items-center">
                 <div className="flex items-center  gap-3">
                     <h1 className="cursor-pointer">Logo</h1>
@@ -31,7 +32,7 @@ export default function  Navbar(){
                     </div>
                 </div>
             </div>
-            <div  className={ showDropdown? `block absolute right-6 mt-3 ` : `hidden`}>
+            <div  className={ showDropdown? `block absolute  right-0 mt-3 ` : `hidden`}>
                 <NavbarDropdown/>
             </div>
 
