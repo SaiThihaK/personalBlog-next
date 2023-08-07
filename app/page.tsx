@@ -1,7 +1,20 @@
 'use client'
 import Image from "next/image";
+import BlogCard from "@/Components/Blog";
 export default function Home() {
   return (
+      // <div className="my-8 mx-4">
+      //   <BlogCard
+      //       authorImg="https://miro.medium.com/v2/resize:fill:24:24/1*3UTDqFP49SgYL62JlEXeLQ.jpeg"
+      //       authorName="Nicky"
+      //       contentImg="https://miro.medium.com/v2/resize:fill:112:112/1*Ht8T-vqbqy5iG7FzNQGjFA.png"
+      //       date="Jul 26, 2022"
+      //       title="Composables in Vue3"
+      //       content="Signals are being adopted rapidly by all modern javascript frameworks. They have been around forever but resurfaced recently by Solidjs, and now every major javascript framework including Qwik, Preact, and"
+      //       tags={['Vue']}
+      //       onClick={() => console.log('clicked')}
+      //   />
+      // </div>
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">

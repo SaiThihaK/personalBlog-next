@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import {MdOutlineBookmarkAdd, MdRemoveCircleOutline, MdOutlineMoreHoriz} from "react-icons/md";
+import Tooltip from "@/Components/Tooltip";
 type BlogCardProps = {
     authorImg: string,
     authorName: string,
@@ -20,23 +21,34 @@ export default function BlogCard({authorImg, authorName, date, title, content, c
                                 <Image
                                     width={24}
                                     height={24}
-                                    className="rounded-full"
+                                    className="rounded-full object-cover"
                                     src={authorImg}
                                     alt="author image"
                                 />
                             </div>
-                            <div className="ml-2 flex items-center gap-2">
+                            <div className="ml-2 flex items-center">
                                 <h6 className="text-sm text-slate-950">{authorName}</h6>
+                                <span className="mx-2 text-sm font-bold">·</span>
                                 <span className="text-sm text-gray-500 tracking-tight">{date}</span>
                             </div>
                         </div>
-                        <h4 className="text-xl font-bold text-slate-950">
-                            {title}
-                        </h4>
-                        <p className="text-base leading-6 text-slate-900">
+                        <div className="flex items-start">
+                            <h4 className="text-lg md:text-xl flex-1 font-bold text-slate-950">
+                                {title}
+                            </h4>
+                            <div className="flex-shrink-0 w-[80px] h-[56px] relative md:hidden">
+                                <Image
+                                    fill
+                                    className="object-cover"
+                                    src={contentImg}
+                                    alt="blog image"
+                                />
+                            </div>
+                        </div>
+                        <p className="hidden md:block text-base leading-6 text-slate-900">
                             {content}
                         </p>
-                        <div className="py-8 flex items-center justify-between">
+                        <div className="py-3 md:py-8 flex items-center justify-between">
                             <div className="flex items-center gap-3">
                                 {
                                     tags?.map((tag, index) => (
@@ -46,16 +58,22 @@ export default function BlogCard({authorImg, authorName, date, title, content, c
                                 <span className="text-gray-500 text-sm tracking-tight">4 min read</span>
                             </div>
                             <div className="flex items-center gap-3">
-                                <MdOutlineBookmarkAdd className="text-gray-500 text-xl cursor-pointer"/>
-                                <MdRemoveCircleOutline className="text-gray-500 text-xl cursor-pointer"/>
-                                <MdOutlineMoreHoriz className="text-gray-500 text-xl cursor-pointer"/>
+                                <Tooltip value="Bookmark">
+                                    <MdOutlineBookmarkAdd className="text-gray-500 text-2xl cursor-pointer"/>
+                                </Tooltip>
+                                <Tooltip value="Show less like this">
+                                    <MdRemoveCircleOutline className="text-gray-500 text-2xl cursor-pointer"/>
+                                </Tooltip>
+                                <Tooltip value="More">
+                                    <MdOutlineMoreHoriz className="text-gray-500 text-2xl cursor-pointer"/>
+                                </Tooltip>
                             </div>
                         </div>
                     </div>
-                <div className="flex-shrink-0">
+                <div className="flex-shrink-0 w-[112px] h-[112px] relative hidden md:block">
                     <Image
-                        width={112}
-                        height={112}
+                        fill
+                        className="object-cover"
                         src={contentImg}
                         alt="blog image"
                     />
